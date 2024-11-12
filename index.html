@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistem Kasir Sederhana</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Sistem Kasir Sederhana</h1>
+
+    <!-- Form untuk menambahkan item ke keranjang -->
+    <div class="add-item-form">
+      <select id="productSelect">
+        <option value="1">Kopi - Rp10,000</option>
+        <option value="2">Teh - Rp5,000</option>
+        <option value="3">Roti - Rp15,000</option>
+      </select>
+      <input type="number" id="quantityInput" placeholder="Jumlah" min="1" />
+      <button onclick="addItem()">Tambah Item</button>
+    </div>
+
+    <!-- Tabel keranjang belanja -->
+    <table id="cartTable">
+      <thead>
+        <tr>
+          <th>Produk</th>
+          <th>Harga</th>
+          <th>Jumlah</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody id="cartItems"></tbody>
+    </table>
+
+    <!-- Diskon dan total bayar -->
+    <div class="totals">
+      <label for="discountInput">Diskon (%)</label>
+      <input type="number" id="discountInput" placeholder="Diskon" min="0" max="100" />
+      <button onclick="calculateTotalWithDiscount()">Hitung Total</button>
+      <div id="totalDisplay">Total Bayar: Rp0</div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
